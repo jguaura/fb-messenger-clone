@@ -8,7 +8,7 @@ import Message from './components/Message/Message';
 import FlipMove from 'react-flip-move';
 
 import styled from 'styled-components';
-import { FormControlWrapper, StyledFormControl, StyledInput } from './styled-components';
+import { Title, FormControlWrapper, StyledFormControl, StyledInput } from './styled-components';
 
 import firebase from 'firebase';
 import db from './firebase/config';
@@ -43,18 +43,19 @@ function App() {
     .orderBy('timestamp', 'asc')
     .onSnapshot(snapshot => {
       setMessages(snapshot.docs
-        .map(doc => ({id: doc.id, message: doc.data()}) ))
+        .map(doc => ({id: doc.id, message: doc.data()}) 
+        ))
     })
   }, [])
 
   useEffect(() => {
-    setUsername(prompt('What is your name?'))
+    //  
   }, [])
 
   return (
     <div className="app">
       <img src='https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100' />
-      <h1>Messenger GO BRRR 🔥 </h1>
+      <Title>Messenger GO BRRR 🔥 </Title>
       <h2>Hi {username || 'Unknown user'}</h2>
       <FormControlWrapper>
         <StyledFormControl onKeyPress={e => check(e)}>
@@ -70,7 +71,7 @@ function App() {
       </FormControlWrapper>
         <FlipMove>
           {
-            messages.map(({message, id}) => <Message key={id} message={message} user={username} />)
+            messages.map(({message, id, timestamp}) => <Message key={id} message={message} user={username} timestamp={timestamp} />)
           }
         </FlipMove>
     </div>
