@@ -40,11 +40,12 @@ export const StyledInput = styled(Input)`
 
 export const MessagesWrapper = styled(ScrollToBottom)`
   height: 58vh;
+  width: 100%;
   /* background-color: red; */
   /* width: 50%; */
   scrollbar-width: thin;
   overflow-x: hidden;
-  margin-right: -20px;
+  margin-right: -30px;
 
   @media(max-width: 500px) {height: 55vh; padding-bottom: 1rem;}
   @media(max-width: 330px) {height: 48vh;}
