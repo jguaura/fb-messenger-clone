@@ -1,15 +1,18 @@
 import { Button, FormControl, InputLabel, Input, IconButton, Card, CardContent, Typography } from '@material-ui/core';
+import ScrollToBottom from 'react-scroll-to-bottom';
 import styled from 'styled-components';
 
 export const Title = styled.h1`
 
-  @media(max-width: 899px) {
-    font-size: 1.8em;
-  }
+  @media(max-width: 899px) { font-size: 1.8em;}
+  @media(max-width: 330px) { font-size: 1.6em; }
+`
+
+export const Header = styled.header`
 `
 
 export const FormControlWrapper = styled.div`
-  width: 100%;
+  width: 60%;
   box-sizing: border-box;
   padding: 20px;
   margin: 20px 0px 0px 0px;
@@ -17,6 +20,9 @@ export const FormControlWrapper = styled.div`
   bottom: 0;
   z-index: 1;
   background-color: #e9e9e9;
+
+  @media(max-width: 599px) {width: 100%}
+  @media(max-width: 400px) {padding: 10px 20px;}
 `
 
 export const StyledFormControl = styled(FormControl)`
@@ -28,6 +34,20 @@ export const StyledFormControl = styled(FormControl)`
 
 export const StyledInput = styled(Input)`
   flex: 1;
+  position: relative;
+  z-index: 2 !important;
+`
+
+export const MessagesWrapper = styled(ScrollToBottom)`
+  height: 58vh;
+  /* background-color: red; */
+  /* width: 50%; */
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  margin-right: -20px;
+
+  @media(max-width: 500px) {height: 55vh; padding-bottom: 1rem;}
+  @media(max-width: 330px) {height: 48vh;}
 `
 
 // Message component styles
@@ -60,4 +80,13 @@ export const MessageSender = styled.span`
   /* font-size: .7rem; */
   color: #bbb;
   font-weight: lighter;
+`
+export const Img = styled.img`
+  width: 60px;
+  height: 60px;
+
+  @media(max-width: 600px) {
+    width:40px;
+    height:40px;
+  }
 `

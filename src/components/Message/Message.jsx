@@ -6,7 +6,7 @@ import { MessageCard, MessageSender, StyledCardContent, StyledTypography } from 
 const Message = forwardRef(({ message, user, timestamp }, ref) => {
 
     const isUser = user === message.username;
-    console.log(timestamp, 'timestamp')
+
     return (
         <>
             <MessageSender>{!isUser && `${message.username || 'Unknown user'} says: ` }</MessageSender>
