@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { Card, Typography, CardContent } from '@material-ui/core'
 
-import { MessageCard, MessageSender, StyledCardContent, StyledTypography } from '../../styled-components';
+import { MessageCard, MessageSender, StyledCardContent, StyledTypography } from '../../styled-components/components/styled-components';
 
 const Message = forwardRef(({ message, user, timestamp }, ref) => {
 
